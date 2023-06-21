@@ -7,7 +7,17 @@ edition = "2018"
 [dependencies]
 riscv = "0.5.4"
 riscv-rt = "0.6.1"
-gd32vf103xx-hal = "0.2.3"
+#gd32vf103xx-hal = "0.2.3"
 panic-halt = "0.2.0"
-usb-device = "0.2.5"
+usb-device = "0.2"
 synopsys-usb-otg = { version = "0.2.1", features = ["riscv", "fs"] }
+
+[dependencies.usbd-hid]
+version = "0.6"
+# Current published crates.io package doesn't include the `KeyboardUsage` struct
+# Remove when next version is published
+git = "https://github.com/twitchyliquid64/usbd-hid"
+
+[dependencies.gd32vf103xx-hal]
+git = "https://github.com/rmsyn/gd32vf103xx-hal"
+branch = "dev"
